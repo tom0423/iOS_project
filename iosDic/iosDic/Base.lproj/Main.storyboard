@@ -68,10 +68,13 @@
                                 <rect key="frame" x="74" y="0.0" width="245" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" id="zYH-U1-RwW">
+                                    <searchBar contentMode="redraw" id="OO3-vc-srN">
                                         <rect key="frame" x="0.0" y="18" width="245" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="B48-dg-Hcd" id="G1h-Y0-HQ1"/>
+                                        </connections>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yCR-R4-oCp">
                                         <rect key="frame" x="0.0" y="62" width="245" height="418"/>
@@ -125,11 +128,21 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainViews" destination="WPG-O8-hQs" id="bpa-YJ-FaN"/>
+                        <outlet property="searchDisplayController" destination="Xck-FH-diQ" id="MER-fP-fYB"/>
                         <outlet property="sideMenu" destination="yCR-R4-oCp" id="A9Q-aM-3dE"/>
                         <outletCollection property="sideMenu" destination="dH8-UG-WOK" id="qxT-q7-G1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBX-Oi-qOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Xck-FH-diQ">
+                    <connections>
+                        <outlet property="delegate" destination="B48-dg-Hcd" id="JSr-5R-g9i"/>
+                        <outlet property="searchBar" destination="OO3-vc-srN" id="irW-GF-gv6"/>
+                        <outlet property="searchContentsController" destination="B48-dg-Hcd" id="Cn1-Gd-Qta"/>
+                        <outlet property="searchResultsDataSource" destination="B48-dg-Hcd" id="Lhi-KX-PNn"/>
+                        <outlet property="searchResultsDelegate" destination="B48-dg-Hcd" id="nug-oE-HuT"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="519" y="-214"/>
         </scene>
