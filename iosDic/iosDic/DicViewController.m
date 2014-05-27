@@ -10,6 +10,8 @@
 
 @interface DicViewController ()
 
+@property (strong, nonatomic) NSArray *FirstArray ;
+
 @end
 
 @implementation DicViewController
@@ -29,6 +31,34 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.FirstArray = [[NSArray alloc] initWithObjects:
+                       @"제 1권 : 소아청소년 응급의료",
+                       @"제 2권 : 소아청소년 질병, 안전사고 예방",
+                       @"제 3권 : 소아청소년 성장 발육 육아",
+                       @"제 4권 : 모유, 모유수유, 이유",
+                       @"제 5권 : 인공영약, 우유, 이유식, 비타민, 미네랄, 단백질, 탄수화물, 지방",
+                       @"제 6권 : ",
+                       @"제 7권 : ",
+                       @"제 8권 : ",
+                       @"제 9권 : ",
+                       @"제 10권 : ",
+                       @"제 11권 : ",
+                       @"제 12권 : ",
+                       @"제 13권 : ",
+                       @"제 14권 : ",
+                       @"제 15권 : ",
+                       @"제 16권 : ",
+                       @"제 17권 : ",
+                       @"제 18권 : ",
+                       @"제 19권 : ",
+                       @"제 20권 : ",
+                       @"제 21권 : ",
+                       @"제 22권 : ",
+                       @"제 23권 : ",
+                       @"제 24권 : ",
+                       @"제 25권 : ",
+                       nil] ;
     
     sideMenuCheck = true;
     [sideMenu setDataSource:self];
@@ -72,23 +102,10 @@
 //   Slide Menu Bar :: Table view에 관한 메소드들
 // ----------------------------------------------------------------------------
 
-// 그룹 갯수지정
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1 ;  // 만들고 싶은 그룹 수를 리턴시킨다
-}
-
 // 해당 그룹의 세션 나누기
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // 변수 section : 그룹의 번호를 나타낸다
-    // return : 해당 그룹의 세션 갯수를 리턴시킨다
-    switch (section) {
-        case 0:
-            return 3;
-            break;
-    }
-    return 0;
+    return [self.FirstArray count] ;
 }
 
 // 그룹 타이틀 입력
@@ -123,38 +140,26 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+  /*
     NSArray *viewsToRemove1 = [cell subviews];
     for (UIView *v in viewsToRemove1)
     {
         if (v.tag == 111111) {
             [v removeFromSuperview];
         }
-        
     }
-    
+
+
     UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 200, 20)];
     text.backgroundColor = [UIColor clearColor];
     text.textColor =[UIColor blackColor];
     text.font = [UIFont systemFontOfSize:14];
     text.tag = 111111;
-    
-    NSLog(@"세션값 알아보기[%d]",indexPath.section);
-    
-    if (indexPath.section == 0)
-    {
-        if (indexPath.row == 0)
-        {
-            text.text = @"제 1권 : 소아청소년 응급의료	";
-        }else if(indexPath.row == 1)
-        {
-            text.text = @"제 2권 : 소아청소년 질병, 안전사고 예방";
-        }else if(indexPath.row == 2)
-        {
-            text.text = @"제 3권 : 소아청소년 성장 발육 육아";
-        }
-    }
-    
-    [cell addSubview:text];
+ 
+    text.text = [self.FirstArray objectAtIndex:indexPath.row] ;
+ */
+    cell.textLabel.text =[self.FirstArray objectAtIndex:indexPath.row] ;
+  //  [cell addSubview:text];
     return cell;
 }
 
