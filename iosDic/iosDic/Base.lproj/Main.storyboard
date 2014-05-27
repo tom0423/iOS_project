@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -8,25 +8,21 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController title="main" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="f7K-zM-ltb">
+                            <searchBar contentMode="redraw" text="" id="f7K-zM-ltb">
                                 <rect key="frame" x="0.0" y="34" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="diE-gT-040">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="diE-gT-040">
                                 <rect key="frame" x="-4" y="102" width="328" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7192363477" green="0.74225118889999997" blue="0.38937143169999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ay-Do-aaN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0ay-Do-aaN">
                                 <rect key="frame" x="33" y="392" width="77" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93860394020000004" green="0.71665400079999997" blue="0.2308996958" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +35,7 @@
                                     <segue destination="B48-dg-Hcd" kind="modal" modalTransitionStyle="flipHorizontal" id="sMA-lT-LI8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-HB-z36">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eg1-HB-z36">
                                 <rect key="frame" x="149" y="392" width="142" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93860394020000004" green="0.71665400079999997" blue="0.2308996958" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,30 +60,74 @@
         <scene sceneID="hD6-iI-o9R">
             <objects>
                 <viewController id="B48-dg-Hcd" customClass="DicViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iZx-4n-omG"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cm9-xZ-3EV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Re8-cS-nc9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dxe-W1-uH7">
-                                <rect key="frame" x="0.0" y="18" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Dic" id="bx1-Rj-lND">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="czh-Wp-TnG">
-                                            <connections>
-                                                <action selector="cancelAndDismiss:" destination="B48-dg-Hcd" id="Grc-Jd-nau"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <view contentMode="scaleToFill" id="dH8-UG-WOK">
+                                <rect key="frame" x="74" y="0.0" width="245" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" id="zYH-U1-RwW">
+                                        <rect key="frame" x="0.0" y="18" width="245" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yCR-R4-oCp">
+                                        <rect key="frame" x="0.0" y="62" width="245" height="418"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MMK-GF-iAa">
+                                                <rect key="frame" x="0.0" y="22" width="245" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMK-GF-iAa" id="dO2-sx-tHc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="WPG-O8-hQs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" id="XUE-6Q-PK5">
+                                        <rect key="frame" x="0.0" y="26" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem title="Title" id="fFr-ww-2ww">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="czh-Wp-TnG">
+                                                    <color key="tintColor" red="1" green="0.23043548229787236" blue="0.25733572733752419" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="cancelAndDismiss:" destination="B48-dg-Hcd" id="Grc-Jd-nau"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Item" id="XmT-VI-bLM">
+                                                    <connections>
+                                                        <action selector="sideMenuBtn" destination="B48-dg-Hcd" id="et8-0Z-d9f"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.3337099711" green="1" blue="0.29480012449999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainViews" destination="WPG-O8-hQs" id="bpa-YJ-FaN"/>
+                        <outlet property="sideMenu" destination="yCR-R4-oCp" id="A9Q-aM-3dE"/>
+                        <outletCollection property="sideMenu" destination="dH8-UG-WOK" id="qxT-q7-G1b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBX-Oi-qOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,15 +137,11 @@
         <scene sceneID="F26-gh-eBn">
             <objects>
                 <viewController id="lCa-R3-any" customClass="NewsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qao-Ku-UCM"/>
-                        <viewControllerLayoutGuide type="bottom" id="LJc-GY-hzc"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MpF-Oz-ykh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4u-TV-XAk">
+                            <navigationBar contentMode="scaleToFill" id="N4u-TV-XAk">
                                 <rect key="frame" x="0.0" y="18" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -127,7 +163,6 @@
             <point key="canvasLocation" x="519" y="424"/>
         </scene>
     </scenes>
-    <color key="tintColor" patternImage="CC9832A9-24C0-415E-9F34-E67263A1065D" colorSpace="pattern"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
