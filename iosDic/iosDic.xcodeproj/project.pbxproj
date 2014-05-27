@@ -21,6 +21,8 @@
 		236C7845191A5E29004B4FBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C7827191A5E29004B4FBF /* UIKit.framework */; };
 		236C784D191A5E29004B4FBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 236C784B191A5E29004B4FBF /* InfoPlist.strings */; };
 		236C784F191A5E29004B4FBF /* iosDicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236C784E191A5E29004B4FBF /* iosDicTests.m */; };
+		ADC138CF19336971004A54B7 /* DicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138CE19336971004A54B7 /* DicViewController.m */; };
+		ADC138D219348793004A54B7 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138D119348793004A54B7 /* NewsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		236C784A191A5E29004B4FBF /* iosDicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iosDicTests-Info.plist"; sourceTree = "<group>"; };
 		236C784C191A5E29004B4FBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		236C784E191A5E29004B4FBF /* iosDicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosDicTests.m; sourceTree = "<group>"; };
+		ADC138CD19336971004A54B7 /* DicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicViewController.h; sourceTree = "<group>"; };
+		ADC138CE19336971004A54B7 /* DicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicViewController.m; sourceTree = "<group>"; };
+		ADC138D019348793004A54B7 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		ADC138D119348793004A54B7 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				236C7832191A5E29004B4FBF /* AppDelegate.h */,
 				236C7833191A5E29004B4FBF /* AppDelegate.m */,
 				236C7835191A5E29004B4FBF /* Main.storyboard */,
+				ADC138D019348793004A54B7 /* NewsViewController.h */,
+				ADC138D119348793004A54B7 /* NewsViewController.m */,
+				ADC138CD19336971004A54B7 /* DicViewController.h */,
+				ADC138CE19336971004A54B7 /* DicViewController.m */,
 				236C7838191A5E29004B4FBF /* ViewController.h */,
 				236C7839191A5E29004B4FBF /* ViewController.m */,
 				236C783B191A5E29004B4FBF /* Images.xcassets */,
@@ -250,6 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				236C783A191A5E29004B4FBF /* ViewController.m in Sources */,
+				ADC138CF19336971004A54B7 /* DicViewController.m in Sources */,
+				ADC138D219348793004A54B7 /* NewsViewController.m in Sources */,
 				236C7834191A5E29004B4FBF /* AppDelegate.m in Sources */,
 				236C7830191A5E29004B4FBF /* main.m in Sources */,
 			);
@@ -456,6 +468,7 @@
 				236C7854191A5E29004B4FBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		236C7855191A5E29004B4FBF /* Build configuration list for PBXNativeTarget "iosDicTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +477,7 @@
 				236C7857191A5E29004B4FBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
