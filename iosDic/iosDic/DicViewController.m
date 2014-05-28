@@ -208,9 +208,10 @@
     {
         NSString *s2 = [searchResult objectAtIndex:indexPath.row] ;
         str = [str stringByAppendingString:s2] ;
-        [self.SearchBar setShowsCancelButton:NO animated:YES] ; //
-        [tableView setHidden:YES]; // 검색 결과 테이블뷰를 숨긴다
         
+        [tableView setHidden:YES]; // 검색 결과 테이블뷰를 숨긴다
+        [self.view endEditing:YES]; // 2014.5.28 SRN 검색 결과 키보드를 숨긴다
+
     }
     else // 슬라이딩 메뉴의 테이블뷰
     {
