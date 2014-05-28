@@ -10,11 +10,16 @@
 
 @interface DicViewController ()
 
-@property (strong, nonatomic) NSArray *FirstArray ;
+//@property (strong, nonatomic) NSArray *FirstArray ;
+//@property (strong, nonatomic) NSArray *searchResult;
 
 @end
 
 @implementation DicViewController
+{
+    NSArray *FirstArray;
+    NSArray *searchResult;
+}
 
 @synthesize sideMenu;
 @synthesize mainViews;
@@ -32,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.FirstArray = [[NSArray alloc] initWithObjects:
+    FirstArray = [NSArray arrayWithObjects:
                        @"제 1권 : 소아청소년 응급의료",
                        @"제 2권 : 소아청소년 질병, 안전사고 예방",
                        @"제 3권 : 소아청소년 성장 발육 육아",
@@ -59,6 +64,7 @@
                        @"제 24권 : ",
                        @"제 25권 : ",
                        nil] ;
+   // searchResult =  [[NSArray alloc] init];
     
     sideMenuCheck = true;
     [sideMenu setDataSource:self];
@@ -105,7 +111,16 @@
 // 해당 그룹의 세션 나누기
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.FirstArray count] ;
+    // 5/27 LHS:검색 기능 구현중 ㅎ
+    if(tableView == self.searchDisplayController.searchResultsTableView )
+    {
+        return [searchResult count];
+        
+    }
+    else
+    {
+        return [FirstArray count] ;
+    }
 }
 
 // 그룹 타이틀 입력
@@ -140,6 +155,15 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    
+    if(tableView == self.searchDisplayController.searchResultsTableView )
+    {
+        cell.textLabel.text = [searchResult objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        cell.textLabel.text =[FirstArray objectAtIndex:indexPath.row] ;
+    }
   /*
     NSArray *viewsToRemove1 = [cell subviews];
     for (UIView *v in viewsToRemove1)
@@ -158,11 +182,24 @@
  
     text.text = [self.FirstArray objectAtIndex:indexPath.row] ;
  */
-    cell.textLabel.text =[self.FirstArray objectAtIndex:indexPath.row] ;
+
   //  [cell addSubview:text];
     return cell;
 }
 
+#pragma serach methods 
+-(void) filterContentForSeachText:(NSString *) searchText scope:(NSString *) scope
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF biginswith[c] %@", searchText];
+    searchResult = [FirstArray filteredArrayUsingPredicate: predicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSeachText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles]objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex ]]];
+    
+    return YES;
+}
 
 #pragma mark - tableView didSelectRowAtIndexPath(각각 셀 만드는 메소드)
 // 기능 : 각각 셀을 선택하였을 때
