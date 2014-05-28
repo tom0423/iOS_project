@@ -27,6 +27,7 @@
 @synthesize mainViews;
 @synthesize sideMenuCheck;
 @synthesize testingText;    // KimDB : 슬라이드 메뉴클릭시 텍스트변경 Testing
+@synthesize SearchBar;
 
 #define SizeX 0
 #define SizeY 0
@@ -99,6 +100,7 @@
         viewFram.origin.x = 0 ;
         sideMenuCheck = true;
     }
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.3];
@@ -191,20 +193,6 @@
     return cell;
 }
 
-#pragma serach methods 
--(void) filterContentForSeachText:(NSString *) searchText scope:(NSString *) scope
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
-    searchResult = [FirstArray filteredArrayUsingPredicate: predicate];
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSeachText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles]objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex ]]];
-    
-    return YES;
-}
-
 
 #pragma mark - tableView didSelectRowAtIndexPath(각각 셀 만드는 메소드)
 
@@ -214,11 +202,24 @@
     NSLog(@"%d열 %d행 번째",indexPath.section,[indexPath row]);
     
     // KimDB : 슬라이드 메뉴클릭시 텍스트변경 ----------------------------
-    NSString *s2 = [FirstArray objectAtIndex:indexPath.row] ;
     str = [NSString stringWithFormat:@"  > "];
-    str = [str stringByAppendingString:s2] ;
+    
+    if(tableView == self.searchDisplayController.searchResultsTableView )
+    {
+        NSString *s2 = [searchResult objectAtIndex:indexPath.row] ;
+        str = [str stringByAppendingString:s2] ;
+        [self.SearchBar setShowsCancelButton:NO animated:YES] ; //
+        [tableView setHidden:YES]; // 검색 결과 테이블뷰를 숨긴다
+        
+    }
+    else // 슬라이딩 메뉴의 테이블뷰
+    {
+        NSString *s2 = [FirstArray objectAtIndex:indexPath.row] ;
+        str = [str stringByAppendingString:s2] ;
+    }
     
     testingText.text = str ;
+    
     // ------------------------------------------------------------
     
     if (indexPath.section == 0) {
@@ -238,5 +239,28 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];  // 해제
 }
+
+
+// ----------------------------------------------------------------------------
+//   Search Bar에 관한 메소드들
+// ----------------------------------------------------------------------------
+
+#pragma serach methods 
+
+// 검색 결과인 단어를 searchResult array에 넣음
+-(void) filterContentForSeachText:(NSString *) searchText scope:(NSString *) scope
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
+    searchResult = [FirstArray filteredArrayUsingPredicate: predicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSeachText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles]objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex ]]];
+    
+    return YES;
+}
+
+
 
 @end

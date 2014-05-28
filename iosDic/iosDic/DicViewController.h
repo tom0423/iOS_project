@@ -20,6 +20,9 @@
 
 @property (strong, nonatomic) IBOutlet UITextView *testingText; // KimDB : 슬라이딩 메뉴의 선택된 항목 출력
 
+@property (strong, nonatomic) IBOutlet UISearchBar *SearchBar; // KimDB : 슬라이딩메뉴의 검색바
+
+
 - (IBAction)cancelAndDismiss:(id)sender;
 - (IBAction) sideMenuBtn ;
 

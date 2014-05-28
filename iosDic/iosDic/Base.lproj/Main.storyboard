@@ -149,6 +149,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="SearchBar" destination="OO3-vc-srN" id="V0l-El-d6K"/>
                         <outlet property="mainViews" destination="WPG-O8-hQs" id="bpa-YJ-FaN"/>
                         <outlet property="searchDisplayController" destination="Xck-FH-diQ" id="MER-fP-fYB"/>
                         <outlet property="sideMenu" destination="yCR-R4-oCp" id="A9Q-aM-3dE"/>
