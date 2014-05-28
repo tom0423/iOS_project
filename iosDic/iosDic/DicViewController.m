@@ -194,7 +194,7 @@
 #pragma serach methods 
 -(void) filterContentForSeachText:(NSString *) searchText scope:(NSString *) scope
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF biginswith[c] %@", searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
     searchResult = [FirstArray filteredArrayUsingPredicate: predicate];
 }
 
@@ -204,6 +204,7 @@
     
     return YES;
 }
+
 
 #pragma mark - tableView didSelectRowAtIndexPath(각각 셀 만드는 메소드)
 
