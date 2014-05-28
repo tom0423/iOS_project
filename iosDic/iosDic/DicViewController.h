@@ -13,10 +13,12 @@
 
 
 
-@property(nonatomic, assign) BOOL sideMenuCheck;
-@property (strong, nonatomic) IBOutlet UITableView *sideMenu;
+@property(nonatomic, assign) BOOL sideMenuCheck;   // 슬라이딩 메뉴가 선택되었는지 유무
+@property (strong, nonatomic) IBOutlet UITableView *sideMenu; // 슬라이딩메뉴
 
-@property(nonatomic, strong) IBOutlet UIView *mainViews;
+@property(nonatomic, strong) IBOutlet UIView *mainViews; // NavigationBar가 포함된 메인뷰
+
+@property (strong, nonatomic) IBOutlet UITextView *testingText; // KimDB : 슬라이딩 메뉴의 선택된 항목 출력
 
 - (IBAction)cancelAndDismiss:(id)sender;
 - (IBAction) sideMenuBtn ;

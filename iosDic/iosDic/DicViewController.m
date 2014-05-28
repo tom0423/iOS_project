@@ -17,13 +17,16 @@
 
 @implementation DicViewController
 {
-    NSArray *FirstArray;
+    NSArray *FirstArray;        // 소아가정백과 권제목에 대한 정보를 담음
     NSArray *searchResult;
+    
+    NSString *str ;             // KimDB : 슬라이드 메뉴클릭시 텍스트변경 Testing
 }
 
 @synthesize sideMenu;
 @synthesize mainViews;
 @synthesize sideMenuCheck;
+@synthesize testingText;    // KimDB : 슬라이드 메뉴클릭시 텍스트변경 Testing
 
 #define SizeX 0
 #define SizeY 0
@@ -35,35 +38,36 @@
 -(void) viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
     
     FirstArray = [NSArray arrayWithObjects:
-                       @"제 1권 : 소아청소년 응급의료",
-                       @"제 2권 : 소아청소년 질병, 안전사고 예방",
-                       @"제 3권 : 소아청소년 성장 발육 육아",
-                       @"제 4권 : 모유, 모유수유, 이유",
-                       @"제 5권 : 인공영약, 우유, 이유식, 비타민, 미네랄, 단백질, 탄수화물, 지방",
-                       @"제 6권 : ",
-                       @"제 7권 : ",
-                       @"제 8권 : ",
-                       @"제 9권 : ",
-                       @"제 10권 : ",
-                       @"제 11권 : ",
-                       @"제 12권 : ",
-                       @"제 13권 : ",
-                       @"제 14권 : ",
-                       @"제 15권 : ",
-                       @"제 16권 : ",
-                       @"제 17권 : ",
-                       @"제 18권 : ",
-                       @"제 19권 : ",
-                       @"제 20권 : ",
-                       @"제 21권 : ",
-                       @"제 22권 : ",
-                       @"제 23권 : ",
-                       @"제 24권 : ",
-                       @"제 25권 : ",
+                  @"제 1권 : 응급의료",
+                  @"제 2권 : 질병, 안전사고 예방",
+                  @"제 3권 : 성장, 발육, 육아",
+                  @"제 4권 : 모유, 모유수유, 이유",
+                  @"제 5권 : 인공영약, 우유, 이유식, 비타민, 미네랄, 단백질, 탄수화물, 지방",
+                  @"제 6권 : 신생아의 성장 발육 양육 질환",
+                  @"제 7권 : 감염병",
+                  @"제 8권 : 호흡기 질환",
+                  @"제 9권 : 소화기 질환",
+                  @"제 10권 : 신장, 비뇨, 생식기 질환",
+                  @"제 11권 : 심장, 혈관계 질환",
+                  @"제 12권 : 신경정신 질환, 행동수면 문제",
+                  @"제 13권 : 혈액, 림프, 종양 질환",
+                  @"제 14권 : 내분비, 유전, 염색체, 대사, 희귀병",
+                  @"제 15권 : 알레르기, 자가 면역 질환",
+                  @"제 16권 : 정형외과 질환",
+                  @"제 17권 : 피부질환",
+                  @"제 18권 : 이비인후 질환",
+                  @"제 19권 : 안(눈)과 질환",
+                  @"제 20권 : 치아 구강 질환",
+                  @"제 21권 : 가정, 학교 간호",
+                  @"제 22권 : 아들 딸 이렇게 사랑해주세요",
+                  @"제 23권 : 사춘기 아이들의 성장 발육 질병",
+                  @"제 24권 : 성교육",
+                  @"제 25권 : 임신, 분만, 출산, 신생아 돌보기",
                        nil] ;
+    
    // searchResult =  [[NSArray alloc] init];
     
     sideMenuCheck = true;
@@ -202,10 +206,19 @@
 }
 
 #pragma mark - tableView didSelectRowAtIndexPath(각각 셀 만드는 메소드)
+
 // 기능 : 각각 셀을 선택하였을 때
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%d열 %d행 번째",indexPath.section,[indexPath row]);
+    
+    // KimDB : 슬라이드 메뉴클릭시 텍스트변경 ----------------------------
+    NSString *s2 = [FirstArray objectAtIndex:indexPath.row] ;
+    str = [NSString stringWithFormat:@"  > "];
+    str = [str stringByAppendingString:s2] ;
+    
+    testingText.text = str ;
+    // ------------------------------------------------------------
     
     if (indexPath.section == 0) {
         CGPoint point;
