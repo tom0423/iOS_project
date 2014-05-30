@@ -196,10 +196,33 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tHm-3J-yBb">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem tag="10" title="&lt;" id="LVA-Rw-Et1">
+                                        <connections>
+                                            <action selector="barButtonClick:" destination="lCa-R3-any" id="ViF-Na-lXD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="20" title=">" id="gaz-gJ-Wu0">
+                                        <connections>
+                                            <action selector="barButtonClick:" destination="lCa-R3-any" id="RwE-Sa-C7L"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="200" style="plain" systemItem="fixedSpace" id="xkz-wm-IgW"/>
+                                    <barButtonItem tag="30" title="home" id="OeW-nm-XZi">
+                                        <connections>
+                                            <action selector="barButtonClick:" destination="lCa-R3-any" id="5R1-Fa-Z0i"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="barButtonClick" destination="OeW-nm-XZi" id="d6U-Rp-kh7"/>
                         <outlet property="webView" destination="9rs-VF-Un7" id="Z9A-vz-BFh"/>
                     </connections>
                 </viewController>
