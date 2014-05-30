@@ -209,6 +209,8 @@
         NSString *s2 = [searchResult objectAtIndex:indexPath.row] ;
         str = [str stringByAppendingString:s2] ;
         
+        
+        
         [tableView setHidden:YES]; // 검색 결과 테이블뷰를 숨긴다
         [self.view endEditing:YES]; // 2014.5.28 SRN 검색 결과 키보드를 숨긴다
 
@@ -251,6 +253,7 @@
 // 검색 결과인 단어를 searchResult array에 넣음
 -(void) filterContentForSeachText:(NSString *) searchText scope:(NSString *) scope
 {
+    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
     searchResult = [FirstArray filteredArrayUsingPredicate: predicate];
 }

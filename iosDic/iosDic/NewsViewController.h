@@ -10,6 +10,7 @@
 
 @interface NewsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 - (IBAction)cancelAndDismiss:(id)sender;
 
 @end
