@@ -17,17 +17,20 @@
 
 @implementation DicViewController
 {
-    NSArray *FirstArray;        // 소아가정백과 권제목에 대한 정보를 담음
-    NSArray *searchResult;
+    NSArray *FirstArray;        // 소아가정백과 권제목에 대한 정보들
+    NSArray *searchResult;      // 슬라이드 메뉴 검색결과들
+    NSString *str ;             // 선택된 Book title
     
-    NSString *str ;             // KimDB : 슬라이드 메뉴클릭시 텍스트변경 Testing
+    NSMutableArray *ChapterArray ;
+    
 }
 
-@synthesize sideMenu;
 @synthesize mainViews;
 @synthesize sideMenuCheck;
-@synthesize testingText;    // KimDB : 슬라이드 메뉴클릭시 텍스트변경 Testing
+@synthesize testingText;    // 선택된 BookTitle
 @synthesize SearchBar;
+@synthesize sideMenu;       // Book List Table
+@synthesize chapterTable;   // Chpater List Table
 
 #define SizeX 0
 #define SizeY 0
@@ -70,10 +73,19 @@
                        nil] ;
     
    // searchResult =  [[NSArray alloc] init];
-    
+
+    // 슬라이딩 메뉴 초기화
     sideMenuCheck = true;
     [sideMenu setDataSource:self];
     [sideMenu setDelegate:self];
+    
+    // 데이터베이스
+    pDataBase = [[DicDataBase alloc] init ] ;
+    ChapterArray = [ [NSMutableArray alloc] init ] ;
+    
+    // chapter list 초기화
+    [chapterTable setDataSource:self] ;
+    [chapterTable setDelegate:self];
 }
 
 // 뒤로가기 버튼 클릭시
@@ -121,33 +133,30 @@
     if(tableView == self.searchDisplayController.searchResultsTableView )
     {
         return [searchResult count];
-        
     }
-    else
+    else if ( tableView == self.sideMenu )
     {
         return [FirstArray count] ;
     }
+    else {
+        return ([ChapterArray count]==0)?1:[ChapterArray count] ;
+    }
+    
 }
 
 // 그룹 타이틀 입력
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UILabel *testView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 260, 10)];
-    testView.backgroundColor = [UIColor blackColor];
-    testView.textColor = [UIColor whiteColor];
     
-    // 변수 section : 그룹의 번호를 나타낸다
-    switch (section) {
-        case 0:
-            testView.text =@"  소아가정 간호백과";
-            break;
-            
-        default:
-            testView.text =@"";
-            break;
+    if ( tableView == self.sideMenu ){
+        UILabel *testView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 260, 10)];
+        testView.backgroundColor = [UIColor blackColor];
+        testView.textColor = [UIColor whiteColor];
+        testView.text =@"  소아가정 간호백과";
+        
+        return testView ;
     }
-    
-    return testView;
+    return NULL;
 }
 
 #pragma mark - tableView cellForRowAtIndexPath : 테이블 뷰의 셀을 생성
@@ -156,6 +165,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [sideMenu dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
+    cell.textLabel.textColor = [UIColor blackColor] ;
     
     if(cell == nil)
     {
@@ -166,30 +178,19 @@
     {
         cell.textLabel.text = [searchResult objectAtIndex:indexPath.row];
     }
-    else
+    else if ( tableView == self.sideMenu )
     {
         cell.textLabel.text =[FirstArray objectAtIndex:indexPath.row] ;
     }
-  /*
-    NSArray *viewsToRemove1 = [cell subviews];
-    for (UIView *v in viewsToRemove1)
+    else if ( tableView == self.chapterTable )
     {
-        if (v.tag == 111111) {
-            [v removeFromSuperview];
+        NSLog(@"chapter array 셀 생성중");
+        if ( [ChapterArray count] != 0 ) {
+            cell.textLabel.font = [UIFont systemFontOfSize:14];
+            cell.textLabel.text = [ChapterArray objectAtIndex:indexPath.row] ;
         }
     }
-
-
-    UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 200, 20)];
-    text.backgroundColor = [UIColor clearColor];
-    text.textColor =[UIColor blackColor];
-    text.font = [UIFont systemFontOfSize:14];
-    text.tag = 111111;
- 
-    text.text = [self.FirstArray objectAtIndex:indexPath.row] ;
- */
-
-  //  [cell addSubview:text];
+  
     return cell;
 }
 
@@ -209,23 +210,43 @@
         NSString *s2 = [searchResult objectAtIndex:indexPath.row] ;
         str = [str stringByAppendingString:s2] ;
         
-        
-        
         [tableView setHidden:YES]; // 검색 결과 테이블뷰를 숨긴다
         [self.view endEditing:YES]; // 2014.5.28 SRN 검색 결과 키보드를 숨긴다
-
+        
+        int i ;
+        for ( i=0 ; i<26 ; i++ ) {
+           
+            if ( [s2 isEqualToString:(NSString*)[FirstArray objectAtIndex:i]] )
+                break ;
+        }
+        
+        ChapterArray = [[NSMutableArray alloc] init ] ;
+        ChapterArray = [pDataBase getChapterList:(int)i+1];
+        if ( [ChapterArray count] == 0 )
+            NSLog(@"ChapterArray에 잘들어갔음");
+        
+        [chapterTable reloadData];
+        
     }
-    else // 슬라이딩 메뉴의 테이블뷰
+    else if ( tableView == self.sideMenu ) // 슬라이딩 메뉴의 테이블뷰
     {
         NSString *s2 = [FirstArray objectAtIndex:indexPath.row] ;
         str = [str stringByAppendingString:s2] ;
+        
+        ChapterArray = [[NSMutableArray alloc] init ] ;
+        ChapterArray = [pDataBase getChapterList:(int)indexPath.row+1];
+        if ( [ChapterArray count] == 0 )
+            NSLog(@"ChapterArray에 잘들어갔음");
+        
+        [chapterTable reloadData];
     }
-    
-    testingText.text = str ;
     
     // ------------------------------------------------------------
     
-    if (indexPath.section == 0) {
+    if ( indexPath.section == 0 && tableView != self.chapterTable ) {
+        
+        testingText.text = str ;
+        
         CGPoint point;
         point.y = SizeY;
         if (indexPath.row == 0) {
