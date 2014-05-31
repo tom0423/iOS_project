@@ -11,12 +11,14 @@
 
 @interface DicDataBase : NSObject
 {
-    NSMutableArray *memoListArray ; // 검색된 게시글의 내용을 저장하는 Array 객체
-    
+    NSMutableArray *ContentsListArray ; // 검색된 게시글의 내용을 저장하는 Array 객체
+    NSMutableArray *ChapterListArray; // chapter의 이름을 저장하는 Array 객체
 }
 
 - (void) DataBaseConnection:(sqlite3 **)tempDataBase ;  // 데이터베이스 연결
 - (void) getContentsList ;                              // N권 N장안의 컨텐츠 리스트들 검색
+
+- (void) getChapterList ;                              // N권 안의 chapter name 리스트들 검색
 
 @property(nonatomic, retain) NSMutableArray *memoListArray ;
 
