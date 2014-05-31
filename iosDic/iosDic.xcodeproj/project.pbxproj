@@ -21,6 +21,9 @@
 		236C7845191A5E29004B4FBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C7827191A5E29004B4FBF /* UIKit.framework */; };
 		236C784D191A5E29004B4FBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 236C784B191A5E29004B4FBF /* InfoPlist.strings */; };
 		236C784F191A5E29004B4FBF /* iosDicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236C784E191A5E29004B4FBF /* iosDicTests.m */; };
+		23AA36BF1939BF2100E23C3C /* DicDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA36BE1939BF2100E23C3C /* DicDataBase.m */; };
+		23AA36C11939C78000E23C3C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA36C01939C78000E23C3C /* libsqlite3.dylib */; };
+		23AA36C31939D1B500E23C3C /* soDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 23AA36C21939D1B500E23C3C /* soDictionary.sqlite */; };
 		ADC138CF19336971004A54B7 /* DicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138CE19336971004A54B7 /* DicViewController.m */; };
 		ADC138D219348793004A54B7 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138D119348793004A54B7 /* NewsViewController.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,10 @@
 		236C784A191A5E29004B4FBF /* iosDicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iosDicTests-Info.plist"; sourceTree = "<group>"; };
 		236C784C191A5E29004B4FBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		236C784E191A5E29004B4FBF /* iosDicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosDicTests.m; sourceTree = "<group>"; };
+		23AA36BD1939BF2100E23C3C /* DicDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicDataBase.h; sourceTree = "<group>"; };
+		23AA36BE1939BF2100E23C3C /* DicDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicDataBase.m; sourceTree = "<group>"; };
+		23AA36C01939C78000E23C3C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		23AA36C21939D1B500E23C3C /* soDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = soDictionary.sqlite; sourceTree = "<group>"; };
 		ADC138CD19336971004A54B7 /* DicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicViewController.h; sourceTree = "<group>"; };
 		ADC138CE19336971004A54B7 /* DicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicViewController.m; sourceTree = "<group>"; };
 		ADC138D019348793004A54B7 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AA36C11939C78000E23C3C /* libsqlite3.dylib in Frameworks */,
 				236C7826191A5E29004B4FBF /* CoreGraphics.framework in Frameworks */,
 				236C7828191A5E29004B4FBF /* UIKit.framework in Frameworks */,
 				236C7824191A5E29004B4FBF /* Foundation.framework in Frameworks */,
@@ -88,6 +96,7 @@
 		236C7817191A5E29004B4FBF = {
 			isa = PBXGroup;
 			children = (
+				23AA36C21939D1B500E23C3C /* soDictionary.sqlite */,
 				236C7829191A5E29004B4FBF /* iosDic */,
 				236C7848191A5E29004B4FBF /* iosDicTests */,
 				236C7822191A5E29004B4FBF /* Frameworks */,
@@ -107,6 +116,7 @@
 		236C7822191A5E29004B4FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23AA36C01939C78000E23C3C /* libsqlite3.dylib */,
 				236C7823191A5E29004B4FBF /* Foundation.framework */,
 				236C7825191A5E29004B4FBF /* CoreGraphics.framework */,
 				236C7827191A5E29004B4FBF /* UIKit.framework */,
@@ -127,6 +137,8 @@
 				ADC138CE19336971004A54B7 /* DicViewController.m */,
 				236C7838191A5E29004B4FBF /* ViewController.h */,
 				236C7839191A5E29004B4FBF /* ViewController.m */,
+				23AA36BD1939BF2100E23C3C /* DicDataBase.h */,
+				23AA36BE1939BF2100E23C3C /* DicDataBase.m */,
 				236C783B191A5E29004B4FBF /* Images.xcassets */,
 				236C782A191A5E29004B4FBF /* Supporting Files */,
 			);
@@ -238,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AA36C31939D1B500E23C3C /* soDictionary.sqlite in Resources */,
 				236C783C191A5E29004B4FBF /* Images.xcassets in Resources */,
 				236C782E191A5E29004B4FBF /* InfoPlist.strings in Resources */,
 				236C7837191A5E29004B4FBF /* Main.storyboard in Resources */,
@@ -262,6 +275,7 @@
 				236C783A191A5E29004B4FBF /* ViewController.m in Sources */,
 				ADC138CF19336971004A54B7 /* DicViewController.m in Sources */,
 				ADC138D219348793004A54B7 /* NewsViewController.m in Sources */,
+				23AA36BF1939BF2100E23C3C /* DicDataBase.m in Sources */,
 				236C7834191A5E29004B4FBF /* AppDelegate.m in Sources */,
 				236C7830191A5E29004B4FBF /* main.m in Sources */,
 			);

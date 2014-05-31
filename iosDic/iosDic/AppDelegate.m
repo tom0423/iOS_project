@@ -12,8 +12,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // 14/05/31 KimDB : DB 파일을 복사
+    
+    // 데이터베이스 파일복사
+    [self CopyOfDataBaseIfNeeded] ;
+    
+//    [self.window addSubview:[UIViewController view]] ;
+    [self.window makeKeyAndVisible];//?
+    
     // Override point for customization after application launch.
     return YES;
+}
+
+// 14/05/31 KimDB : 번들에 있는 데이터베이스를 복사하는 메서드
+- (BOOL)CopyOfDataBaseIfNeeded {
+    
+    // Documents 폴더 위치를 구함
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES ) ;
+    NSString *documentDirectory = [paths objectAtIndex:0] ;
+    
+    // 데이터베이스 파일명 : Dictionary.sqlite
+    NSString *myPath = [documentDirectory
+                        stringByAppendingPathComponent:@"soDictionary.sqlite"] ;
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager] ;
+    BOOL exist = [fileManager fileExistsAtPath:myPath] ;
+    
+    if ( exist ) {
+        NSLog(@"DB가 존재합니다") ;
+        return TRUE ;
+    }
+    
+    // 파일이 없으면 리소스에서 파일을 복사
+    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath]
+                               stringByAppendingPathComponent:
+                               @"soDictionary.sqlite"] ;
+    
+    return [fileManager copyItemAtPath:defaultDBPath toPath:myPath error:nil] ;
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
