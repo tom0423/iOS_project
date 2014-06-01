@@ -10,6 +10,7 @@
 #import "DicDataBase.h"
 
 @interface ChViewController : UIViewController
+<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchDisplayDelegate>
 {
     DicDataBase *pDataBase ;
 }
@@ -18,5 +19,7 @@
 @property (nonatomic, strong) NSString *chapNum;
 
 - (IBAction)cancel:(id)sender;  // 뒤로가기 버튼
+
+@property (strong, nonatomic) IBOutlet UITableView *contTableView;
 
 @end

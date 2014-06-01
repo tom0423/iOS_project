@@ -15,6 +15,7 @@
 
 @synthesize bookNum ;
 @synthesize chapNum ;
+@synthesize contTableView ;
 
 
 - (void)viewDidLoad
@@ -28,6 +29,8 @@
     pDataBase = [[DicDataBase alloc] init ] ;
     ContentsArray = [pDataBase getContentsList:[bookNum intValue] :[chapNum intValue]];
     
+    [contTableView setDataSource:self] ;
+    [contTableView setDelegate:self];
     NSLog(@"contents cnt=%d",[ContentsArray count]);
 }
 
@@ -58,7 +61,7 @@
 // 기능 : 정보에 따라 안에 값들을 만들어준다.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [contTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     cell.textLabel.textColor = [UIColor blackColor] ;
