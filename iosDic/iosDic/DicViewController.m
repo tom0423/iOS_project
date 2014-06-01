@@ -74,6 +74,9 @@
     
    // searchResult =  [[NSArray alloc] init];
 
+    chooseChap = 0 ;
+    chooseBook = 0 ;
+    
     // 슬라이딩 메뉴 초기화
     sideMenuCheck = true;
     [sideMenu setDataSource:self];
@@ -237,6 +240,9 @@
         
         ChapterArray = [[NSMutableArray alloc] init ] ;
         ChapterArray = [pDataBase getChapterList:(int)indexPath.row+1];
+        
+        chooseBook = indexPath.row+1 ;
+        
         if ( [ChapterArray count] == 0 )
             NSLog(@"ChapterArray에 잘들어갔음");
         
@@ -245,6 +251,8 @@
     else if ( tableView == self.chapterTable )  // Chpater 테이블뷰
     {
         NSLog(@"chapter list에서 눌림");
+        
+        chooseChap = indexPath.row+1 ;
         [self performSegueWithIdentifier: @"show" sender: self];
     }
     
@@ -271,27 +279,23 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];  // 해제
 }
 
-// test
+// ----------------------------------------------------------------------------
+//   Chpater 테이블에서 셀선택시 새로운 뷰로 넘어가는 것에 관한 메소드들
+// ----------------------------------------------------------------------------
+
+// 연결된 뷰를 연다
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    NSLog(@"prepareForSegue");
+    NSLog(@"prepareSegue Start");
     
     if ([segue.identifier isEqualToString:@"show"]) {
         ChViewController *destViewController = segue.destinationViewController;
+       
+        destViewController.chapNum = [NSString stringWithFormat:@"%d",chooseChap] ;
+        destViewController.bookNum = [NSString stringWithFormat:@"%d",chooseBook] ;
         
-        /*
-        NSIndexPath *indexPath = nil;
-        if ([self.searchDisplayController isActive]) {
-            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            destViewController.recipeName = [searchResults objectAtIndex:indexPath.row];
-            
-        } else {
-            indexPath = [self.tableView indexPathForSelectedRow];
-            destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
-        }*/
-        NSLog(@"de");
+        NSLog(@"prepareSegue End");
     }
-    
 }
 
 // ----------------------------------------------------------------------------
