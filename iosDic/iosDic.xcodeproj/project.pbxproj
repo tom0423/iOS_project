@@ -24,6 +24,7 @@
 		23AA36BF1939BF2100E23C3C /* DicDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA36BE1939BF2100E23C3C /* DicDataBase.m */; };
 		23AA36C11939C78000E23C3C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA36C01939C78000E23C3C /* libsqlite3.dylib */; };
 		23AA36C9193B248900E23C3C /* ChViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA36C8193B248900E23C3C /* ChViewController.m */; };
+		ADA26531193B89A800F42F50 /* soDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADA26530193B89A800F42F50 /* soDictionary.sqlite */; };
 		ADC138CF19336971004A54B7 /* DicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138CE19336971004A54B7 /* DicViewController.m */; };
 		ADC138D219348793004A54B7 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138D119348793004A54B7 /* NewsViewController.m */; };
 /* End PBXBuildFile section */
@@ -61,9 +62,9 @@
 		23AA36BD1939BF2100E23C3C /* DicDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicDataBase.h; sourceTree = "<group>"; };
 		23AA36BE1939BF2100E23C3C /* DicDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicDataBase.m; sourceTree = "<group>"; };
 		23AA36C01939C78000E23C3C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		23AA36C21939D1B500E23C3C /* soDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = soDictionary.sqlite; sourceTree = "<group>"; };
 		23AA36C7193B248900E23C3C /* ChViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChViewController.h; sourceTree = "<group>"; };
 		23AA36C8193B248900E23C3C /* ChViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChViewController.m; sourceTree = "<group>"; };
+		ADA26530193B89A800F42F50 /* soDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = soDictionary.sqlite; sourceTree = "<group>"; };
 		ADC138CD19336971004A54B7 /* DicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicViewController.h; sourceTree = "<group>"; };
 		ADC138CE19336971004A54B7 /* DicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicViewController.m; sourceTree = "<group>"; };
 		ADC138D019348793004A54B7 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -98,7 +99,7 @@
 		236C7817191A5E29004B4FBF = {
 			isa = PBXGroup;
 			children = (
-				23AA36C21939D1B500E23C3C /* soDictionary.sqlite */,
+				ADA26530193B89A800F42F50 /* soDictionary.sqlite */,
 				236C7829191A5E29004B4FBF /* iosDic */,
 				236C7848191A5E29004B4FBF /* iosDicTests */,
 				236C7822191A5E29004B4FBF /* Frameworks */,
@@ -254,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA26531193B89A800F42F50 /* soDictionary.sqlite in Resources */,
 				236C783C191A5E29004B4FBF /* Images.xcassets in Resources */,
 				236C782E191A5E29004B4FBF /* InfoPlist.strings in Resources */,
 				236C7837191A5E29004B4FBF /* Main.storyboard in Resources */,
