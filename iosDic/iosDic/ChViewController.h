@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DicDataBase.h"
 
 @interface ChViewController : UIViewController
+{
+    DicDataBase *pDataBase ;
+}
 
-- (IBAction)cancel:(id)sender;
+@property (nonatomic, strong) NSString *bookNum;
+@property (nonatomic, strong) NSString *chapNum;
+
+- (IBAction)cancel:(id)sender;  // 뒤로가기 버튼
 
 @end

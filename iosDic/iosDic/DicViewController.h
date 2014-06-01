@@ -11,16 +11,18 @@
 #import "ChViewController.h"
 
 @interface DicViewController : UIViewController
-<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchDisplayDelegate>
+<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchDisplayDelegate>
 {
     DicDataBase *pDataBase ;
+    int chooseBook ;    // 선택된 Book Number
+    int chooseChap ;    // 선택된 Chapter Number
 }
 
-@property(nonatomic, assign) BOOL sideMenuCheck;                // 슬라이딩 메뉴가 선택되었는지 유무
+@property (nonatomic, assign) BOOL sideMenuCheck;                // 슬라이딩 메뉴가 선택되었는지 유무
 
 @property (strong, nonatomic) IBOutlet UITableView *sideMenu;   // 슬라이딩메뉴
 
-@property(nonatomic, strong) IBOutlet UIView *mainViews;        // NavigationBar가 포함된 메인뷰
+@property (nonatomic, strong) IBOutlet UIView *mainViews;        // NavigationBar가 포함된 메인뷰
 
 @property (strong, nonatomic) IBOutlet UITextView *testingText; // 슬라이딩 메뉴의 선택된 항목 출력
 
@@ -31,5 +33,5 @@
 - (IBAction)cancelAndDismiss:(id)sender;
 - (IBAction)sideMenuBtn ;
 
-
 @end
+
