@@ -99,7 +99,7 @@
     }];
 }
 
-// item 버튼 클릭시
+// Book 버튼 클릭시
 - (IBAction) sideMenuBtn
 {
     CGRect viewFram = mainViews.frame;

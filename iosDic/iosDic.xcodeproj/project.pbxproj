@@ -23,8 +23,8 @@
 		236C784F191A5E29004B4FBF /* iosDicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236C784E191A5E29004B4FBF /* iosDicTests.m */; };
 		23AA36BF1939BF2100E23C3C /* DicDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA36BE1939BF2100E23C3C /* DicDataBase.m */; };
 		23AA36C11939C78000E23C3C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA36C01939C78000E23C3C /* libsqlite3.dylib */; };
-		23AA36C31939D1B500E23C3C /* soDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 23AA36C21939D1B500E23C3C /* soDictionary.sqlite */; };
 		23AA36C9193B248900E23C3C /* ChViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA36C8193B248900E23C3C /* ChViewController.m */; };
+		ADA2652B193B82EE00F42F50 /* soDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 23AA36C21939D1B500E23C3C /* soDictionary.sqlite */; };
 		ADC138CF19336971004A54B7 /* DicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138CE19336971004A54B7 /* DicViewController.m */; };
 		ADC138D219348793004A54B7 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138D119348793004A54B7 /* NewsViewController.m */; };
 /* End PBXBuildFile section */
@@ -255,7 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23AA36C31939D1B500E23C3C /* soDictionary.sqlite in Resources */,
+				ADA2652B193B82EE00F42F50 /* soDictionary.sqlite in Resources */,
 				236C783C191A5E29004B4FBF /* Images.xcassets in Resources */,
 				236C782E191A5E29004B4FBF /* InfoPlist.strings in Resources */,
 				236C7837191A5E29004B4FBF /* Main.storyboard in Resources */,
