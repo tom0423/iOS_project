@@ -242,6 +242,11 @@
         
         [chapterTable reloadData];
     }
+    else if ( tableView == self.chapterTable )  // Chpater 테이블뷰
+    {
+        NSLog(@"chapter list에서 눌림");
+        [self performSegueWithIdentifier: @"show" sender: self];
+    }
     
     // ------------------------------------------------------------
     
@@ -266,6 +271,28 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];  // 해제
 }
 
+// test
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSLog(@"prepareForSegue");
+    
+    if ([segue.identifier isEqualToString:@"show"]) {
+        ChViewController *destViewController = segue.destinationViewController;
+        
+        /*
+        NSIndexPath *indexPath = nil;
+        if ([self.searchDisplayController isActive]) {
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            destViewController.recipeName = [searchResults objectAtIndex:indexPath.row];
+            
+        } else {
+            indexPath = [self.tableView indexPathForSelectedRow];
+            destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
+        }*/
+        NSLog(@"de");
+    }
+    
+}
 
 // ----------------------------------------------------------------------------
 //   Search Bar에 관한 메소드들

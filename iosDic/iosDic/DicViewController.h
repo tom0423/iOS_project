@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DicDataBase.h"
+#import "ChViewController.h"
 
 @interface DicViewController : UIViewController
 <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchDisplayDelegate>
