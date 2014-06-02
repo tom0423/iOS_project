@@ -11,6 +11,7 @@
 @implementation ChViewController
 {
     NSMutableArray *ContentsArray ;
+    NSMutableArray *URLArray ;
     
 }
 
@@ -29,8 +30,8 @@
     // 데이터베이스
     pDataBase = [[DicDataBase alloc] init ] ;
     ContentsArray = [pDataBase getContentsList:[bookNum intValue] :[chapNum intValue]];
-    //ContentsArray = [pDataBase getChapterList:[bookNum intValue]];
-    
+    URLArray = [pDataBase getContentsURLList:[bookNum intValue] :[chapNum intValue]];
+
     [contTableView setDataSource:self] ;
     [contTableView setDelegate:self];
     NSLog(@"contents cnt=%d",[ContentsArray count]);
@@ -101,7 +102,8 @@
     CGRect viewFram = self.mainViews.frame;
     self.webView.scalesPageToFit = YES; //LHS: 웹페이지를 웹뷰에 맞게 크기 조절
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.koreapediatrics.com/index.php?mid=encyclo01&category=60931&document_srl=168"]]; //LHS: URL 주소 지정
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:
+                                                          [URLArray objectAtIndex:indexPath.row]]]; //LHS: URL 주소 지정
     
     
     [self.webView loadRequest:request]; //LHS:지정된 주소를 보여주기
