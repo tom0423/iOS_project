@@ -28,8 +28,8 @@
     
     // 데이터베이스
     pDataBase = [[DicDataBase alloc] init ] ;
-    //ContentsArray = [pDataBase getContentsList:[bookNum intValue] :[chapNum intValue]];
-    ContentsArray = [pDataBase getChapterList:[bookNum intValue]];
+    ContentsArray = [pDataBase getContentsList:[bookNum intValue] :[chapNum intValue]];
+    //ContentsArray = [pDataBase getChapterList:[bookNum intValue]];
     
     [contTableView setDataSource:self] ;
     [contTableView setDelegate:self];

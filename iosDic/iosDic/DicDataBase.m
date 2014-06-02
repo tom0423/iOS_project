@@ -109,8 +109,8 @@
     }
     
     // 검색 SQL
-    
-    NSString *querySQL = [NSString stringWithFormat:@"SELECT Contents.CName FROM Dictionary natural join Contents where Dictionary.Book = \"%d\" and Dictionary.Chapter = \"%d\" order by CNum", bookNum, chapterNum];
+    //NSString *querySQL = [NSString stringWithFormat:@"SELECT Contents.CName FROM Dictionary natural join Contents where Dictionary.Book = \"%d\" and Dictionary.Chapter = \"%d\" order by CNum", bookNum, chapterNum];
+    NSString *querySQL = @"SELECT CName FROM Contents";
     const char *sql = [querySQL UTF8String];
     
     // SQL Text를 prepared statement로 변환

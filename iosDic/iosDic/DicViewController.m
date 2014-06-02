@@ -153,7 +153,7 @@
     
     if ( tableView == self.sideMenu ){
         UILabel *testView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 260, 10)];
-        testView.backgroundColor = [UIColor blackColor];
+        testView.backgroundColor = [UIColor colorWithRed:31/255.0 green:80/255.0 blue:181/255.0 alpha:1.0f];
         testView.textColor = [UIColor whiteColor];
         testView.text =@"  소아가정 간호백과";
         

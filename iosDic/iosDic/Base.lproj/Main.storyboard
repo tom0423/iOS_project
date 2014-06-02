@@ -13,17 +13,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainImg" id="diE-gT-040">
-                                <rect key="frame" x="-4" y="78" width="328" height="402"/>
+                                <rect key="frame" x="-4" y="33" width="328" height="427"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.86652595766129037" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <searchBar contentMode="redraw" text="" id="f7K-zM-ltb">
-                                <rect key="frame" x="0.0" y="34" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0ay-Do-aaN">
-                                <rect key="frame" x="20" y="420" width="130" height="40"/>
+                                <rect key="frame" x="20" y="401" width="130" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
@@ -42,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eg1-HB-z36">
-                                <rect key="frame" x="170" y="420" width="130" height="40"/>
+                                <rect key="frame" x="170" y="401" width="130" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
@@ -114,10 +109,11 @@
                                     <navigationBar contentMode="scaleToFill" id="XUE-6Q-PK5">
                                         <rect key="frame" x="0.0" y="26" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.29209136860000001" green="0.55078503050000005" blue="0.74225118889999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem title="소아가정 간호백과" id="fFr-ww-2ww">
                                                 <barButtonItem key="leftBarButtonItem" title="Back" id="czh-Wp-TnG">
-                                                    <color key="tintColor" red="1" green="0.23043548229787236" blue="0.25733572733752419" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.24723368654942732" green="0.33253878468873949" blue="0.61079001913265307" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="cancelAndDismiss:" destination="B48-dg-Hcd" id="Grc-Jd-nau"/>
                                                     </connections>
@@ -201,10 +197,11 @@
                                     <navigationBar contentMode="scaleToFill" id="gwk-Ye-Mhe">
                                         <rect key="frame" x="0.0" y="26" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.29209136860000001" green="0.55078503050000005" blue="0.74225118889999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem title="Title" id="8In-Lp-Msb">
                                                 <barButtonItem key="leftBarButtonItem" title="Back" id="kg0-W1-eCc">
-                                                    <color key="tintColor" red="1" green="0.23043548229999999" blue="0.25733572729999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.24723368649999999" green="0.33253878469999998" blue="0.61079001909999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="sideback" destination="BF4-Mt-H68" id="WCN-8J-Fu1"/>
                                                     </connections>
@@ -227,10 +224,11 @@
                                     <navigationBar contentMode="scaleToFill" id="60M-wy-D9O">
                                         <rect key="frame" x="0.0" y="26" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.29209136860000001" green="0.55078503050000005" blue="0.74225118889999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem title="소아가정 간호백과" id="tXp-A9-7J8">
                                                 <barButtonItem key="leftBarButtonItem" title="Back" id="xAi-Qw-0Zk">
-                                                    <color key="tintColor" red="1" green="0.23043548229999999" blue="0.25733572729999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.24723368649999999" green="0.33253878469999998" blue="0.61079001909999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="cancel:" destination="BF4-Mt-H68" id="brF-Uj-udf"/>
                                                     </connections>
@@ -281,9 +279,11 @@
                             <navigationBar contentMode="scaleToFill" id="N4u-TV-XAk">
                                 <rect key="frame" x="0.0" y="18" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.29209136860000001" green="0.55078503050000005" blue="0.74225118889999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="News" id="4QG-lB-ojR">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="eqQ-MC-9ti">
+                                            <color key="tintColor" red="0.24723368649999999" green="0.33253878469999998" blue="0.61079001909999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="cancelAndDismiss:" destination="lCa-R3-any" id="aQM-47-PpW"/>
                                             </connections>
