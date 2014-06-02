@@ -17,7 +17,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) ;
     NSString *documentDirectory = [paths objectAtIndex:0] ;
     NSString *myPath = [documentDirectory
-                        stringByAppendingPathComponent:@"soDictionary.sqlite"];
+                        stringByAppendingPathComponent:@"test2.sqlite"];
     
     // 데이터베이스 연결
     if ( sqlite3_open([myPath UTF8String], tempDataBase ) != SQLITE_OK ) {
@@ -109,8 +109,8 @@
     }
     
     // 검색 SQL
-    //NSString *querySQL = [NSString stringWithFormat:@"SELECT Contents.CName FROM Dictionary natural join Contents where Dictionary.Book = \"%d\" and Dictionary.Chapter = \"%d\" order by CNum", bookNum, chapterNum];
-    NSString *querySQL = @"SELECT CName FROM Contents";
+    NSString *querySQL = [NSString stringWithFormat:@"SELECT Contents.CName FROM Dictionary natural join Contents where Dictionary.Book = \"%d\" and Dictionary.Chapter = \"%d\" order by CNum", bookNum, chapterNum];
+    //NSString *querySQL = @"SELECT CName FROM Contents";
     const char *sql = [querySQL UTF8String];
     
     // SQL Text를 prepared statement로 변환

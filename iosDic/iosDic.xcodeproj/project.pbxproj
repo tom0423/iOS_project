@@ -13,7 +13,6 @@
 		236C782E191A5E29004B4FBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 236C782C191A5E29004B4FBF /* InfoPlist.strings */; };
 		236C7830191A5E29004B4FBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 236C782F191A5E29004B4FBF /* main.m */; };
 		236C7834191A5E29004B4FBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 236C7833191A5E29004B4FBF /* AppDelegate.m */; };
-		236C7837191A5E29004B4FBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236C7835191A5E29004B4FBF /* Main.storyboard */; };
 		236C783A191A5E29004B4FBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 236C7839191A5E29004B4FBF /* ViewController.m */; };
 		236C783C191A5E29004B4FBF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236C783B191A5E29004B4FBF /* Images.xcassets */; };
 		236C7843191A5E29004B4FBF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C7842191A5E29004B4FBF /* XCTest.framework */; };
@@ -25,6 +24,10 @@
 		23AA36C11939C78000E23C3C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA36C01939C78000E23C3C /* libsqlite3.dylib */; };
 		23AA36C9193B248900E23C3C /* ChViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA36C8193B248900E23C3C /* ChViewController.m */; };
 		ADA26531193B89A800F42F50 /* soDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADA26530193B89A800F42F50 /* soDictionary.sqlite */; };
+		ADA26556193C63F200F42F50 /* test.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADA26555193C63F200F42F50 /* test.sqlite */; };
+		ADA26558193C6DEC00F42F50 /* test2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADA26557193C6DEC00F42F50 /* test2.sqlite */; };
+		ADA26559193C6DEC00F42F50 /* test2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADA26557193C6DEC00F42F50 /* test2.sqlite */; };
+		ADA2655B193C6DFC00F42F50 /* test2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADA2655A193C6DFC00F42F50 /* test2.sqlite */; };
 		ADC138CF19336971004A54B7 /* DicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138CE19336971004A54B7 /* DicViewController.m */; };
 		ADC138D219348793004A54B7 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC138D119348793004A54B7 /* NewsViewController.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		23AA36C7193B248900E23C3C /* ChViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChViewController.h; sourceTree = "<group>"; };
 		23AA36C8193B248900E23C3C /* ChViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChViewController.m; sourceTree = "<group>"; };
 		ADA26530193B89A800F42F50 /* soDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = soDictionary.sqlite; sourceTree = "<group>"; };
+		ADA26555193C63F200F42F50 /* test.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.sqlite; sourceTree = "<group>"; };
+		ADA26557193C6DEC00F42F50 /* test2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.sqlite; sourceTree = "<group>"; };
+		ADA2655A193C6DFC00F42F50 /* test2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.sqlite; sourceTree = "<group>"; };
 		ADC138CD19336971004A54B7 /* DicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicViewController.h; sourceTree = "<group>"; };
 		ADC138CE19336971004A54B7 /* DicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicViewController.m; sourceTree = "<group>"; };
 		ADC138D019348793004A54B7 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 		236C7817191A5E29004B4FBF = {
 			isa = PBXGroup;
 			children = (
+				ADA2655A193C6DFC00F42F50 /* test2.sqlite */,
+				ADA26555193C63F200F42F50 /* test.sqlite */,
 				ADA26530193B89A800F42F50 /* soDictionary.sqlite */,
 				236C7829191A5E29004B4FBF /* iosDic */,
 				236C7848191A5E29004B4FBF /* iosDicTests */,
@@ -153,6 +161,7 @@
 		236C782A191A5E29004B4FBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ADA26557193C6DEC00F42F50 /* test2.sqlite */,
 				236C782B191A5E29004B4FBF /* iosDic-Info.plist */,
 				236C782C191A5E29004B4FBF /* InfoPlist.strings */,
 				236C782F191A5E29004B4FBF /* main.m */,
@@ -255,10 +264,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA2655B193C6DFC00F42F50 /* test2.sqlite in Resources */,
+				ADA26558193C6DEC00F42F50 /* test2.sqlite in Resources */,
+				ADA26556193C63F200F42F50 /* test.sqlite in Resources */,
 				ADA26531193B89A800F42F50 /* soDictionary.sqlite in Resources */,
 				236C783C191A5E29004B4FBF /* Images.xcassets in Resources */,
 				236C782E191A5E29004B4FBF /* InfoPlist.strings in Resources */,
-				236C7837191A5E29004B4FBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA26559193C6DEC00F42F50 /* test2.sqlite in Resources */,
 				236C784D191A5E29004B4FBF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

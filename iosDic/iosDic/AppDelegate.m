@@ -33,7 +33,7 @@
     
     // 데이터베이스 파일명 : Dictionary.sqlite
     NSString *myPath = [documentDirectory
-                        stringByAppendingPathComponent:@"soDictionary.sqlite"] ;
+                        stringByAppendingPathComponent:@"test2.sqlite"] ;
     
     NSFileManager *fileManager = [NSFileManager defaultManager] ;
     BOOL exist = [fileManager fileExistsAtPath:myPath] ;
@@ -46,7 +46,7 @@
     // 파일이 없으면 리소스에서 파일을 복사
     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath]
                                stringByAppendingPathComponent:
-                               @"soDictionary.sqlite"] ;
+                               @"test2.sqlite"] ;
     
     return [fileManager copyItemAtPath:defaultDBPath toPath:myPath error:nil] ;
     
