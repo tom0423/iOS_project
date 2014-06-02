@@ -17,12 +17,12 @@
 
 @property (nonatomic, strong) NSString *bookNum;
 @property (nonatomic, strong) NSString *chapNum;
-@property (nonatomic, assign) BOOL sideMenuCheck;   
-- (IBAction)cancel:(id)sender;  // 뒤로가기 버튼
-- (IBAction)item;
-- (IBAction)sideback;
-@property (weak, nonatomic) IBOutlet UIView *mainViews;
+@property (nonatomic, assign) BOOL sideMenuCheck;
 
+- (IBAction)cancel:(id)sender;  // 뒤로가기 버튼
+- (IBAction)sideback;
+
+@property (weak, nonatomic) IBOutlet UIView *mainViews;
 @property (strong, nonatomic) IBOutlet UITableView *contTableView;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 

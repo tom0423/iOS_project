@@ -28,7 +28,8 @@
     
     // 데이터베이스
     pDataBase = [[DicDataBase alloc] init ] ;
-    ContentsArray = [pDataBase getContentsList:[bookNum intValue] :[chapNum intValue]];
+    //ContentsArray = [pDataBase getContentsList:[bookNum intValue] :[chapNum intValue]];
+    ContentsArray = [pDataBase getChapterList:[bookNum intValue]];
     
     [contTableView setDataSource:self] ;
     [contTableView setDelegate:self];
@@ -51,44 +52,11 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
--(IBAction)item
-{
-    CGRect viewFram = self.mainViews.frame;
-    self.webView.scalesPageToFit = YES; //LHS: 웹페이지를 웹뷰에 맞게 크기 조절
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.koreapediatrics.com/index.php?mid=encyclo01&category=60931&document_srl=168"]]; //LHS: URL 주소 지정
-    
-    
-    [self.webView loadRequest:request]; //LHS:지정된 주소를 보여주기
-    if (self.sideMenuCheck == true)
-    {
-        viewFram.origin.x = -330 ;
-       self.sideMenuCheck = false;
-    }else{
-        viewFram.origin.x = 0 ;
-        self.sideMenuCheck = true;
-    }
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:0.3];
-    
-    [self.mainViews setFrame:viewFram];
-    
-    [UIView commitAnimations];
-}
 -(IBAction)sideback
 {
     CGRect viewFram = self.mainViews.frame;
+    viewFram.origin.x = 0 ;
     
-    if (self.sideMenuCheck == true)
-    {
-        viewFram.origin.x = -330 ;
-        self.sideMenuCheck = false;
-    }else{
-        viewFram.origin.x = 0 ;
-        self.sideMenuCheck = true;
-    }
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.3];
@@ -98,6 +66,7 @@
     [UIView commitAnimations];
     
 }
+
 // 테이블 세션 나누기
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -129,9 +98,23 @@
 {
     NSLog(@"%d열 %d행 번째",indexPath.section,[indexPath row]);
  
-    //
-    // 셀을 선택했을때의 기능 추가
-    //
+    CGRect viewFram = self.mainViews.frame;
+    self.webView.scalesPageToFit = YES; //LHS: 웹페이지를 웹뷰에 맞게 크기 조절
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.koreapediatrics.com/index.php?mid=encyclo01&category=60931&document_srl=168"]]; //LHS: URL 주소 지정
+    
+    
+    [self.webView loadRequest:request]; //LHS:지정된 주소를 보여주기
+    
+    viewFram.origin.x = -330 ;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.3];
+    
+    [self.mainViews setFrame:viewFram];
+    
+    [UIView commitAnimations];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];  // 해제
 }
